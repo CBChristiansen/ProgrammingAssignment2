@@ -1,9 +1,9 @@
-##The first function, makeCacheMatric creates a special "vector",
+##The first function, makeVector creates a special "vector",
 ##which is really a list containing a function to 1) set the value of the vector
 ## 2) get the value of the vector 3) set the value of the inverse 4) get the
 ## value of the Inverse
 
-makeCacheMatrix <- function(x = matrix()) {
+makeVector <- function(x = matrix()) {
     i <- NULL
     set <- function(y) {
         x <<- y
@@ -35,3 +35,7 @@ cacheSolve <- function(x, ...) {
     x$setinverse(i)
     i
 }
+## Test
+B <- matrix(c(1,2,3,4),2,2)
+B1 <- makeVector(B)
+cacheSolve(B1)
